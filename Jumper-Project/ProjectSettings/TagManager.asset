@@ -8,6 +8,9 @@ TagManager:
   - obstacle
   - road
   - start
+  - goal
+  - wallreward
+  - wall
   layers:
   - Default
   - TransparentFX

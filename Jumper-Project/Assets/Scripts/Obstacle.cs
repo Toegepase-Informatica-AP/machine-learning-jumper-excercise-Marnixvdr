@@ -2,7 +2,7 @@
 
 public class Obstacle : MonoBehaviour
 {
-    public float speed = 10f;
+    private float speed;
     //private Character character;
 
     private bool hit = false;
@@ -16,6 +16,7 @@ public class Obstacle : MonoBehaviour
 
     private void Move()
     {
+        speed = Random.Range(8f, 12f);
         transform.position += speed * transform.forward * Time.deltaTime;
     }
     private void OnCollisionEnter(Collision collision)
