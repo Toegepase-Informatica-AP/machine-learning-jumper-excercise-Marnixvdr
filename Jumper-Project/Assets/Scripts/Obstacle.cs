@@ -3,6 +3,9 @@
 public class Obstacle : MonoBehaviour
 {
     public float speed = 10f;
+    //private Character character;
+
+    private bool hit = false;
 
     private void Update()
     {
@@ -19,8 +22,11 @@ public class Obstacle : MonoBehaviour
     {
         if(collision.collider.tag == "end")
         {
+            hit = true;
             Destroy(gameObject);
-            Debug.Log("we hit an object");
+           //character = character.HitCollider(hit);
+            
+
         }
         
     }

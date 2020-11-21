@@ -14,6 +14,7 @@ public class WaveSpawner : MonoBehaviour
     //aantal obstacle die per wave komen
     private int waveNumber = 0;
     private float waitSec = 0.5f;
+  
     private void Update()
     {
         if(countdown <= 0f)
@@ -38,6 +39,12 @@ public class WaveSpawner : MonoBehaviour
             waveNumber = 0;
         }
     }
+    
+    /*
+    private void Start()
+    {
+        Invoke("spawnObstacle", Random.Range(1.0f, 3.5f));
+    }*/
     //aanmaken van obstacle
     void spawnObstacle()
     {
