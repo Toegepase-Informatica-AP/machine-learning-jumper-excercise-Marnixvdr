@@ -6,6 +6,8 @@ TagManager:
   tags:
   - end
   - obstacle
+  - road
+  - start
   layers:
   - Default
   - TransparentFX
