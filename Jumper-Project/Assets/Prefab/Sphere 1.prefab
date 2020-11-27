@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 510499525951239290}
   - component: {fileID: 510499525951239291}
   - component: {fileID: 510499525951239288}
-  - component: {fileID: 510499525951239284}
-  - component: {fileID: 510499525951239287}
+  - component: {fileID: 3698548220432252861}
+  - component: {fileID: 7004594922163454967}
   m_Layer: 0
   m_Name: Sphere 1
   m_TagString: obstacle
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &510499525951239284
+--- !u!54 &3698548220432252861
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &510499525951239287
+--- !u!114 &7004594922163454967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54211e0633a43fc4c9f1a1360d1ece2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!1 &6379561637283759320
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class Obstacle : MonoBehaviour
 
     private void Move()
     {
-        speed = Random.Range(8f, 12f);
+        speed = Random.Range(1f, 15f);
         transform.position += speed * transform.forward * Time.deltaTime;
     }
     private void OnCollisionEnter(Collision collision)

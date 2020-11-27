@@ -48,6 +48,7 @@ public class Character : Agent
         {
             AddReward(-1.0f);
             Destroy(collision.gameObject);
+            EndEpisode();
         }else if(collision.collider.tag == "wall")
         {
             AddReward(-0.1f);

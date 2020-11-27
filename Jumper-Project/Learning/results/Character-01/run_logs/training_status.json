@@ -1,0 +1,23 @@
+{
+    "Character": {
+        "checkpoints": [
+            {
+                "steps": 160110,
+                "file_path": "results\\Character-01\\Character\\Character-160110.nn",
+                "reward": 7.9499999694526196,
+                "creation_time": 1605972873.9457018
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 160110,
+            "file_path": "results\\Character-01\\Character.nn",
+            "reward": 7.9499999694526196,
+            "creation_time": 1605972873.9457018
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.21.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

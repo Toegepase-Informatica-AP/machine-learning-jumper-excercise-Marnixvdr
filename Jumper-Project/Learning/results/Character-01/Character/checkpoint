@@ -1,0 +1,2 @@
+model_checkpoint_path: "Character-160110.ckpt"
+all_model_checkpoint_paths: "Character-160110.ckpt"
