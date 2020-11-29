@@ -325,9 +325,11 @@ Na het uitvoeren van het bovenstaande commando, ga je naar “http://localhost:6
 Je kan op Tensorboard vele verschillende grafieken vinden, gebaseerd op welke parameters je gebruikt. Enkele goede voorbeelden kan je hieronder terugvinden.
 
 Cumulative Reward : Deze grafiek toont de evolutie van de agent naarmate het meer getraind is. Hoe hoger de grafiek, hoe groter de bereikte reward op het einde van een episode.
+
 ![figuur 4.4 Ray Perception Senser 3D](foto/CumulativeReward.png)
 
 Episode Length: Deze grafiek toont de evolutie van de lengtes van de episodes. Hoe hoger de grafiek, hoe langer de episodes duren en dus de agent kan "overleven" binnen de game-environment.
+
 ![figuur 4.4 Ray Perception Senser 3D](foto/EpisodeLength.png)
 
 
