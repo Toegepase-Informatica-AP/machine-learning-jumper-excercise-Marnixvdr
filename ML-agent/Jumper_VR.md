@@ -25,13 +25,12 @@ Het is de bedoeling dat de character over obstakels springt. Soms kan het zijn d
 ### 3.1 Het beloningssysteem
 
 In figuur .. kan je het beloningssysteem zien dat de character zal krijgen. Het is de bedoeling dat onze character over de obstakels springt zonder tegen één te botsen. Wanneer de character niet beweegt wordt hij niet gestraft, als hij over een obstakel springt krijgt hij een beloning, als hij tegen een obstakel botst dan wordt hij gestraft. Hij wordt ook gestraft als hij te lang in de lucht blijft en of hij de waal die boven hem bevindt raakt.
-(foto)
 
 ## 4 Het speelveld
 
 Het eerste wat je kan doen is het speelveld namaken. In figuur 4.1 kan je zien welke objecten er zijn gebruikt. De speelobjecten bestaan uit: 3 cube, 1 sphere en 1 plane. Later zullen er nog objecten toegevoegd worden waar onder de 2 objecten waar je enkel de icon van kunt zien.
 
-![figuur 4.1 speelveld](foto/Speelveld.png)
+![figuur 4.1 speelveld](./foto/Speelveld.png)
 
 ## 4.1 Speelveld objecten
 
