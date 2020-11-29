@@ -32,7 +32,7 @@ In figuur 4.1 kan je het beloningssysteem zien dat de character zal krijgen. Het
 
 Het eerste wat je kan doen is het speelveld namaken. In figuur 4.2 kan je zien welke objecten er zijn gebruikt. De speelobjecten bestaan uit: 3 cube, 1 sphere en 1 plane. Later zullen er nog objecten toegevoegd worden waar onder de 2 objecten waar je enkel de icon van kunt zien.
 
-![figuur 4.2 speelveld](/foto/Speelveld.png)
+![figuur 4.2 speelveld](foto/Speelveld.png)
 
 ## 4.1 Speelveld objecten
 
