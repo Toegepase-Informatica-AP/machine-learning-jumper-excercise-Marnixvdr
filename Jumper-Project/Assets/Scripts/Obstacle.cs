@@ -2,7 +2,10 @@
 
 public class Obstacle : MonoBehaviour
 {
-    public float speed = 10f;
+    private float speed;
+    //private Character character;
+
+    private bool hit = false;
 
     private void Update()
     {
@@ -13,14 +16,18 @@ public class Obstacle : MonoBehaviour
 
     private void Move()
     {
+        speed = Random.Range(1f, 15f);
         transform.position += speed * transform.forward * Time.deltaTime;
     }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "end")
         {
+            hit = true;
             Destroy(gameObject);
-            Debug.Log("we hit an object");
+           //character = character.HitCollider(hit);
+            
+
         }
         
     }
