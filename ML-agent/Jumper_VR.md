@@ -29,15 +29,15 @@ In figuur .. kan je het beloningssysteem zien dat de character zal krijgen. Het 
 
 ## 4 Het speelveld
 
-Het eerste wat je kan doen is het speelveld namaken. In figuur (..) kan je zien welke objecten er zijn gebruikt. De speelobjecten bestaan uit: 3 cube, 1 sphere en 1 plane. Later zullen er nog objecten toegevoegd worden waar onder de 2 objecten waar je enkel de icon van kunt zien.
+Het eerste wat je kan doen is het speelveld namaken. In figuur 4.1 kan je zien welke objecten er zijn gebruikt. De speelobjecten bestaan uit: 3 cube, 1 sphere en 1 plane. Later zullen er nog objecten toegevoegd worden waar onder de 2 objecten waar je enkel de icon van kunt zien.
 
-{foto}
+![figuur 4.1 speelveld](foto/Speelveld.png)
 
 ## 4.1 Speelveld objecten
 
 Laten we beginnen bij het speelveld, hier komen alle objecten. Wanneer je rechtermuisklikt heb je verschillende options hier kies je voor Create Empty en die hernoem je naar environment.
 
-![figuur 4.1 het selecteren van een empty object](foto/emptyobject.png)
+![figuur 4.2 het selecteren van een empty object](foto/emptyobject.png)
 
 Voor de road is er gebruik gemaakt van een plane met schaal X=0.4, Y=1, Z=5 de position en rotations staan op 0 en de road heeft een Mesh Collider.
 
@@ -45,13 +45,13 @@ Voor de road is er gebruik gemaakt van een plane met schaal X=0.4, Y=1, Z=5 de p
 
 De character object heeft 2 children namelijk het oog (sphere) en het hoofd (cube). Deze twee objecten zitten in een empty object genaamd character. Je kan natuurlijk zelf een character maken maar daar kies je zelf voor, maar wij hebben het eenvoudig en simpel gehouden.
 
-{4.2 foto}
+![figuur 4.3 Character](foto/Character.png)
 
 De schaal van het oog is 1 op alle richtingen en heeft Sphere Collider en de schaal van het hoofd is ook 1 op alle richtingen en heeft een Box Collider. Wanneer je deze objecten plaatst zorg dat ze voldoende boven de grond staan. Dit kan bijvoorbeeld op Y=0.5.
 
 De volgende stap is om ervoor te zorgen dat onze character kan zien, aan de hand van een Ray Perception Sensor 3D component. Deze voeg je toe door in de inspector add component te klikken en Ray Perception Sensor 3D component te selecteren. In de volgende figuur kan je zien welke eigenschappen het oog moet hebben.
 
-![figuur 4.3 Ray Perception Senser 3D](foto/rayPerceptionSensor3d.png)
+![figuur 4.4 Ray Perception Senser 3D](foto/rayPerceptionSensor3d.png)
 
 | Eigenschap | Waarde |uitleg |
 |------------|--------|-------|
@@ -70,13 +70,13 @@ Wanneer je de Ray Perception Sensor 3D component voor het eerst toevoegt zal hij
 
 Voor de rest heeft onze character nog twee componenten: Behavior Parameters (hoe het gedrag van de agent zal zijn) en Decision Requester (de trigger die de agent laat weten dat hij een decision moet maken).
 
-![figuur 4.4 Ray Perception Senser 3D](foto/behaviorParameters.png)
+![figuur 4.5 Behavior Parameters](foto/behaviorParameters.png)
 
-![figuur 4.5 Ray Perception Senser 3D](foto/decisionRequester.png)
+![figuur 4.6 Decision Requester](foto/decisionRequester.png)
 
 Onze character heeft een reset position nodig. Hiervoor maken we een empty object en hernoemen die naar reset, plaats het object juist boven de character zelf en geef hem een icon zodat je kan zien waar het zich bevindt.
 
-{foto 4.6 reset}
+![figuur 4.7 Reset](foto/Reset.png)
 
 ## 4.3 De obstakels
 
@@ -88,19 +88,23 @@ Voor de obstakel hebben we gekozen voor een simpel sphere met schaal X=1, Y= 1,Z
 |Tag|obstacle|Is de tag dat de obstakel krijgt|
 ---
 
-![figuur 4.6 figuur obstakel](foto/figuurObstakel.png)
+![figuur 4.8 figuur obstakel](foto/figuurObstakel.png)
 
 Om ervoor te zorgen dat de character weet wanneer hij over een obstakel springt voegen we een balk toe aan onze obstakel. Dubbel klik op je prefab en voeg een cube toe. Geef je cube de naam wallreward en geef hem ook de tag wallreward. Klik de Mesh Renderer zodat de wallreward niet meer zichtbaar is en geef hem een icon zo dat je wel kunt zien waar hij staat.
 
-![figuur 4.6 figuur obstakel](foto/selecticon.png)
+![figuur 4.9 icon](foto/selecticon.png)
 
-![figuur 4.6 figuur obstakel](foto/figuurWallrewaard.png)
+![figuur 4.10 rewardwall](foto/figuurWallrewaard.png)
 
 Omdat we de obstakel zelf niet in de scene zetten kunnen we hier best ook een empty object maken en die juist voor de start balk te plaatsen, hier worden dan de obstakels gespawnd.
+
+![figuur 4.11 spawn](foto/spawn.png)
 
 ## 4.3 End en start balk
 
 De end- en start-balk zijn gelijkaardig, het is een cube met schaal x=4 , y=1 , z=1 en hebben een Box Collider en een Rigidbody. Je zet best de positie van de end block vast want we willen niet dat die van plaats verandert als een obstakel tegen hem botst. De verschillen tussen end en start staat hieronder in een lijstje. Je geeft je objecten best ook verschillende kleurtjes als contrast.
+
+![figuur 4.12 start en end figuur](foto/startenendbalk.png)
 
 |Eigenschap|End balk|Start balk|
 |---|---|---|
@@ -112,13 +116,13 @@ De end- en start-balk zijn gelijkaardig, het is een cube met schaal x=4 , y=1 , 
 
 Voor de scorebord maken we een TextMeshPro, dit kan je doen door op GameObject te klikken, naar 3D Object te gaan en vervolgens Text - TextMeshPro te kiezen. Geef dit object de naam ScoreBoard en plaats hem zodanig dat de scoreboard zichtbaar is vanuit het perspectief van de main camera.
 
-![figuur 4.7 figuur obstakel](foto/Textmeshpro.png)
+![figuur 4.12 Textmeshpro](foto/Textmeshpro.png)
 
 ### 4.5 Wall
 
 Voor we aan de scripts beginnen moet er nog één ding gebeuren, het plaatsen van de wall. Maak van een cube een rechthoek met schaal  X=4, T=0.1, Z=5 en met een Box Collider, en gedeactiveerde mesh renderer. De wall zorgt ervoor dat onze character niet hooger dan de wall kan springen, en je zet deze wall dus boven de character.
 
-![figuur 4.7 figuur obstakel](foto/figuurWall.png)
+![figuur 4.13 figuur wall](foto/figuurWall.png)
 
 ## 5 Scripts
 
@@ -313,23 +317,21 @@ Voor we de ML-Agent kunnen laten trainen moeten we nog een paar andere zaken in 
 
 Nu kunnen we beginnen met de echte training. Als bepaalde parameters in de Behavior Parameters hebt aangepast zet je die terug juist zoals in het vb.
 
-![figuur 4.4 Ray Perception Senser 3D](foto/behaviorParameters.png)
+![figuur 4.4 Behavior Parameters](foto/behaviorParameters.png)
 
 Zet je project op in unity en open je cmd, navigeer hier naar de sub-folder Learning. Vervolgens voer je de volgende code uit in de cmd “```mlagents-learn Obelix-01.yml --run-id Character-01```”. Vervolgens moet je de logo van unity te zien krijgen, zodra je de logo ziet komt op het scherm dat je mag starten. Dan ga je terug naar je unity project en klik je op start.
 Wanneer je ziet dat de ML-agent genoeg heeft getraind kan je die stoppen naar de tensorboard gaan om te kijken hoe de training is verlopen. Dit doe je door in de cmd “```tensorboard --logdir results```” uit te voeren.
 
 ## 8 testen van een NN
 
-Na het uitvoeren van het bovenstaande commando, ga je naar “http://localhost:6006”, om meerdere dashboards te kunnen verkennen op basis van de getrainde neural network. De voornaamste grafiek is de weergave van de belonings-evolutie, die duidelijk laat zien hoe effectief de agent heeft leren werken binnen de gestelde parameters.
+Na het uitvoeren van het bovenstaande commando, ga je naar “```http://localhost:6006```”, om meerdere dashboards te kunnen verkennen op basis van de getrainde neural network. De voornaamste grafiek is de weergave van de belonings-evolutie, die duidelijk laat zien hoe effectief de agent heeft leren werken binnen de gestelde parameters.
 
 Je kan op Tensorboard vele verschillende grafieken vinden, gebaseerd op welke parameters je gebruikt. Enkele goede voorbeelden kan je hieronder terugvinden.
 
 Cumulative Reward : Deze grafiek toont de evolutie van de agent naarmate het meer getraind is. Hoe hoger de grafiek, hoe groter de bereikte reward op het einde van een episode.
 
-![figuur 4.4 Ray Perception Senser 3D](foto/CumulativeReward.png)
+![figuur 4.4 Cumulative Reward](foto/CumulativeReward.png)
 
 Episode Length: Deze grafiek toont de evolutie van de lengtes van de episodes. Hoe hoger de grafiek, hoe langer de episodes duren en dus de agent kan "overleven" binnen de game-environment.
 
-![figuur 4.4 Ray Perception Senser 3D](foto/EpisodeLength.png)
-
-
+![figuur 4.4 Episode Length](foto/EpisodeLength.png)
