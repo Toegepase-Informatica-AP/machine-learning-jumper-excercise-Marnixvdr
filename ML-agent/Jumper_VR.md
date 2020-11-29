@@ -3,7 +3,7 @@
 <center>
 Team RedMoon
 
-Halma Rahimi en Marnix Van de Ryck
+Halima Rahimi en Marnix Van de Ryck
 </center>
 
 ---
@@ -20,7 +20,7 @@ Halma Rahimi en Marnix Van de Ryck
 
 ## 3 De regels van het spel
 
-Het is de bedoeling dat de character over obstakels springt. Soms kan het zijn dat er meerdere obstakels tegelijk op hem afkomt en die moet hij dan kunnen ontwijken door over te springen.
+Het is de bedoeling dat de character over obstakels springt. Soms kan het zijn dat er meerdere obstakels tegelijk op hem afkomt en die moet hij dan kunnen ontwijken door erover te springen. 
 
 ### 3.1 Het beloningssysteem
 
@@ -43,13 +43,13 @@ Voor de road is er gebruik gemaakt van een plane met schaal X=0.4, Y=1, Z=5 de p
 
 ## 4.2 Character speelobject
 
-De character object heeft 2 children namelijk het oog (sphere) en het hoofd (cube). Deze twee objecten zitten in een empty object genaamd character. Je kan natuurlijk zelf een character maken maar daar kies je zelf voor wij hebben het eenvoudig en simpel gehouden.
+De character object heeft 2 children namelijk het oog (sphere) en het hoofd (cube). Deze twee objecten zitten in een empty object genaamd character. Je kan natuurlijk zelf een character maken maar daar kies je zelf voor, maar wij hebben het eenvoudig en simpel gehouden.
 
 {4.2 foto}
 
-Het schaal van het oog is 1 op alle richtingen en heeft Sphere Collider en het schaal van het hoofd is ook 1 op alle richtingen en heeft een Box Collider. Wanneer je deze objecten plaatst zorg dat ze voldoende boven de grond staan dit kan bv Y=0.5.
+De schaal van het oog is 1 op alle richtingen en heeft Sphere Collider en de schaal van het hoofd is ook 1 op alle richtingen en heeft een Box Collider. Wanneer je deze objecten plaatst zorg dat ze voldoende boven de grond staan. Dit kan bijvoorbeeld op Y=0.5.
 
-De volgende stap is om ervoor te zorgen dat onze character kan zien. Dit doe je door een Ray Perception Sensor 3D component toe te voegen, dit doe je door in de inspector add component te klikken en Ray Perception Sensor 3D component te selecteren. In de volgende firuur kan je zien welke eigenschappen het oog moet hebben.
+De volgende stap is om ervoor te zorgen dat onze character kan zien, aan de hand van een Ray Perception Sensor 3D component. Deze voeg je toe door in de inspector add component te klikken en Ray Perception Sensor 3D component te selecteren. In de volgende figuur kan je zien welke eigenschappen het oog moet hebben.
 
 ![figuur 4.3 Ray Perception Senser 3D](foto/rayPerceptionSensor3d.png)
 
@@ -64,9 +64,9 @@ De volgende stap is om ervoor te zorgen dat onze character kan zien. Dit doe je 
 |Stacked Raycasts|1|Geheugen van de sencor|
 |Start / End Vertical Offset|0 / 0.4|Naar boven of onder kijken|
 ---
-Omdat er vier verschillende obstakel zijn is het belangrijk dat onze character die obstakels kan zien daarom hebben we er voor gekozen om de rays per direction 8 te zetten en de max ray degrees 51 is.
+Omdat er vier verschillende obstakel zijn is het belangrijk dat onze character die obstakels kan zien daarom hebben we er voor gekozen om de rays per direction op 8 te zetten en de max ray degrees op 51.
 
-Wanneer je de Ray Perception Sensor 3D component voor het eerst toevoegt hij horizontaal zal zijn, maar in dit voorbeeld hebben we niet enkel obstakels voor hem maar ook boven en onder hem en om te zorgen dat hij die obstakels ziet draai je de rotation van het oog (X=-23.61, Y=180, Z=79.954)
+Wanneer je de Ray Perception Sensor 3D component voor het eerst toevoegt zal hij horizontaal zijn, maar in dit voorbeeld hebben we niet enkel obstakels voor hem maar ook boven en onder hem en om te zorgen dat hij die obstakels ziet, bewerk je de rotation van het oog (X=-23.61, Y=180, Z=79.954)
 
 Voor de rest heeft onze character nog twee componenten: Behavior Parameters (hoe het gedrag van de agent zal zijn) en Decision Requester (de trigger die de agent laat weten dat hij een decision moet maken).
 
@@ -74,7 +74,7 @@ Voor de rest heeft onze character nog twee componenten: Behavior Parameters (hoe
 
 ![figuur 4.5 Ray Perception Senser 3D](foto/decisionRequester.png)
 
-Onze character heeft een reset position nodig hiervoor maken we een empty object en hernoemen die naar reset, plaat het reset object juist boven de character zelf en geef hem een icon zodat je kan zien waar het zich bevindt.
+Onze character heeft een reset position nodig. Hiervoor maken we een empty object en hernoemen die naar reset, plaats het object juist boven de character zelf en geef hem een icon zodat je kan zien waar het zich bevindt.
 
 {foto 4.6 reset}
 
@@ -85,12 +85,12 @@ Voor de obstakel hebben we gekozen voor een simpel sphere met schaal X=1, Y= 1,Z
 |Eigenschap|Obstakel|uitleg|
 |---|---|--|
 |Rigidbody component|Freeze Rotation voor de assen X en Z|We willen dat onze obstakel één richting gaat|
-|Tag|obstacle|Is de tage dat de obstakel krijgt|
+|Tag|obstacle|Is de tag dat de obstakel krijgt|
 ---
 
 ![figuur 4.6 figuur obstakel](foto/figuurObstakel.png)
 
-Om ervoor te zorgen dat de character weet wanneer hij over een obstakel springt voegen we een balk toe aan onze obstakel. Dubbel klik op je prefab en voeg een cube toe. Geef je cube de naam wallreward en hem ook de tag wallreward. Klik de Mesh Renderer zodat de wallreward niet meer zichtbaar is en geef hem een icon zo dat je wel kunt zien waar hij staat.
+Om ervoor te zorgen dat de character weet wanneer hij over een obstakel springt voegen we een balk toe aan onze obstakel. Dubbel klik op je prefab en voeg een cube toe. Geef je cube de naam wallreward en geef hem ook de tag wallreward. Klik de Mesh Renderer zodat de wallreward niet meer zichtbaar is en geef hem een icon zo dat je wel kunt zien waar hij staat.
 
 ![figuur 4.6 figuur obstakel](foto/selecticon.png)
 
@@ -100,7 +100,7 @@ Omdat we de obstakel zelf niet in de scene zetten kunnen we hier best ook een em
 
 ## 4.3 End en start balk
 
-De end en start balk zijn het zelfde, het is een cube met schaal x=4 , y=1 , z=1 en hebben een Box Collider en een Rigidbody. Je zet best de positie van de end block vast want we willen niet dat die van plaats verandert als een obstakel tegen hem botst. De verschillen tussen end en start staat hieronder in een lijstje. Je geeft je objecten best ook een kleurtje als extra.
+De end- en start-balk zijn gelijkaardig, het is een cube met schaal x=4 , y=1 , z=1 en hebben een Box Collider en een Rigidbody. Je zet best de positie van de end block vast want we willen niet dat die van plaats verandert als een obstakel tegen hem botst. De verschillen tussen end en start staat hieronder in een lijstje. Je geeft je objecten best ook verschillende kleurtjes als contrast.
 
 |Eigenschap|End balk|Start balk|
 |---|---|---|
@@ -110,7 +110,7 @@ De end en start balk zijn het zelfde, het is een cube met schaal x=4 , y=1 , z=1
 
 ### 4.4 Scoreboard
 
-Voor de scorebord maken we een TextMeshPro, dit kan doen door op GameObject te klikken en naar 3D Object ga en dan Text - TextMeshPro kiest. Geeft dit object de naam ScoreBoard en plaats hem zodanig dat de scoreboard zichtbaar is vanuit het perspectief van de main camera.
+Voor de scorebord maken we een TextMeshPro, dit kan je doen door op GameObject te klikken en naar 3D Object ga en dan Text - TextMeshPro kiest. Geeft dit object de naam ScoreBoard en plaats hem zodanig dat de scoreboard zichtbaar is vanuit het perspectief van de main camera.
 
 ![figuur 4.7 figuur obstakel](foto/Textmeshpro.png)
 
@@ -305,21 +305,29 @@ Je kan nu zelf beginnen testen door de character met de pijltjestoets te laten s
 
 ### 7.1 configuratie van het NN
 
-Voor we de ML-Agent kunnen laten trainen moeten we nog een paar andere zaken in orde brengen. In de folder van je project maak je een map met de naam Learning, daarin maak je een bestand aan met de naam ```Character-01.yml``` (let wel op dat de naam “Character” hetzelfde moet zijn als je Behavior Name). Op het bestand en plak dit er in.
+Voor we de ML-Agent kunnen laten trainen moeten we nog een paar andere zaken in orde brengen. In de folder van je project maak je een map met de naam Learning, daarin maak je een bestand aan met de naam ```Character-01.yml``` (let wel op dat de naam “Character” hetzelfde moet zijn als je Behavior Name). Open het bestand en plak dit er in. Deze file zal aan de hand van parameters beslissen hoe de 
 
 (character-01.yml)
 
 ### 7.2 start de training
 
-Nu kunnen we beginnen met de echte training. Als bepaalde parameeters in de Behavior Parameters hebt aangepast zet je die terug juist zoals in het vb.
+Nu kunnen we beginnen met de echte training. Als bepaalde parameters in de Behavior Parameters hebt aangepast zet je die terug juist zoals in het vb.
 
 ![figuur 4.4 Ray Perception Senser 3D](foto/behaviorParameters.png)
 
-Zet je project op in unity en open je cmd, navigeer hier naar de sub-folder Learing. Vervolgens voer je de volgende code uit in de cmd “```mlagents-learn Obelix-01.yml --run-id Character-01```”. Vervolgens moet je de logo van unity te zien krijgen, zodra je de logo ziet komt op het scherm dat je mag starten. Dan ga je terug naar je unity project en klik je op start.
-Wanneer je ziet dat de ML-agent genoeg heeft getrain kan je die stoppen naar de tensorboard gaan om te kijken hoe de training is verlopen. Dit doe je door in de cmd “```tensorboard --logdir results```” uit te voeren.
+Zet je project op in unity en open je cmd, navigeer hier naar de sub-folder Learning. Vervolgens voer je de volgende code uit in de cmd “```mlagents-learn Obelix-01.yml --run-id Character-01```”. Vervolgens moet je de logo van unity te zien krijgen, zodra je de logo ziet komt op het scherm dat je mag starten. Dan ga je terug naar je unity project en klik je op start.
+Wanneer je ziet dat de ML-agent genoeg heeft getraind kan je die stoppen naar de tensorboard gaan om te kijken hoe de training is verlopen. Dit doe je door in de cmd “```tensorboard --logdir results```” uit te voeren.
 
 ## 8 testen van een NN
 
+Na het uitvoeren van het bovenstaande commando, ga je naar “http://localhost:6006”, om meerdere dashboards te kunnen verkennen op basis van de getrainde neural network. De voornaamste grafiek is de weergave van de belonings-evolutie, die duidelijk laat zien hoe effectief de agent heeft leren werken binnen de gestelde parameters.
+
+Je kan op Tensorboard vele verschillende grafieken vinden, gebaseerd op welke parameters je gebruikt. Enkele goede voorbeelden kan je hieronder terugvinden.
+
+Cumulative Reward : Deze grafiek toont de evolutie van de agent naarmate het meer getraind is. Hoe hoger de grafiek, hoe groter de bereikte reward op het einde van een episode.
 ![figuur 4.4 Ray Perception Senser 3D](foto/CumulativeReward.png)
 
+Episode Length: Deze grafiek toont de evolutie van de lengtes van de episodes. Hoe hoger de grafiek, hoe langer de episodes duren en dus de agent kan "overleven" binnen de game-environment.
 ![figuur 4.4 Ray Perception Senser 3D](foto/EpisodeLength.png)
+
+
