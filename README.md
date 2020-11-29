@@ -24,8 +24,9 @@ Het is de bedoeling dat de character over obstakels springt. Soms kan het zijn d
 
 ### 3.1 Het beloningssysteem
 
-In figuur .. kan je het beloningssysteem zien dat de character zal krijgen. Het is de bedoeling dat onze character over de obstakels springt zonder tegen één te botsen. Wanneer de character niet beweegt wordt hij niet gestraft, als hij over een obstakel springt krijgt hij een beloning, als hij tegen een obstakel botst dan wordt hij gestraft. Hij wordt ook gestraft als hij te lang in de lucht blijft en of hij de waal die boven hem bevindt raakt.
-(foto)
+In figuur 4.1 kan je het beloningssysteem zien dat de character zal krijgen. Het is de bedoeling dat onze character over de obstakels springt zonder tegen één te botsen. Wanneer de character niet beweegt wordt hij niet gestraft, als hij over een obstakel springt krijgt hij een beloning, als hij tegen een obstakel botst dan wordt hij gestraft. Hij wordt ook gestraft als hij te lang in de lucht blijft en of hij de waal die boven hem bevindt raakt.
+
+![figuur 4.1 speelveld](foto/beloningssysteem.png)
 
 ## 4 Het speelveld
 
@@ -309,9 +310,43 @@ Je kan nu zelf beginnen testen door de character met de pijltjestoets te laten s
 
 ### 7.1 configuratie van het NN
 
-Voor we de ML-Agent kunnen laten trainen moeten we nog een paar andere zaken in orde brengen. In de folder van je project maak je een map met de naam Learning, daarin maak je een bestand aan met de naam ```Character-01.yml``` (let wel op dat de naam “Character” hetzelfde moet zijn als je Behavior Name). Open het bestand en plak dit er in. Deze file zal aan de hand van parameters beslissen hoe de 
+Voor we de ML-Agent kunnen laten trainen moeten we nog een paar andere zaken in orde brengen. In de folder van je project maak je een map met de naam Learning, daarin maak je een bestand aan met de naam ```Character-01.yml``` (let wel op dat de naam “Character” hetzelfde moet zijn als je Behavior Name). Open het bestand en plak dit er in. Deze file zal aan de hand van parameters beslissen hoe de
 
-(character-01.yml)
+```(character-01.yml)
+behaviors:
+  Character:
+    trainer_type: ppo
+    max_steps: 5.0e5
+    time_horizon: 64
+    summary_freq: 10000
+    keep_checkpoints: 1
+    checkpoint_interval: 50000
+    
+    hyperparameters:
+      batch_size: 64
+      buffer_size: 9600
+      learning_rate: 3.0e-4
+      learning_rate_schedule: constant
+      beta: 5.0e-3
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      
+    network_settings:
+      num_layers: 2
+      hidden_units: 128
+      normalize: false
+
+    reward_signals:
+      extrinsic:
+        strength: 1.0
+        gamma: 0.99
+      curiosity:
+        strength: 0.02
+        gamma: 0.99
+        encoding_size: 256
+        learning_rate : 1e-3
+```
 
 ### 7.2 start de training
 
