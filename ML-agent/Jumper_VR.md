@@ -10,7 +10,7 @@ Halima Rahimi en Marnix Van de Ryck
 
 ## 1 Inleiding
 
-(een korte beschrijving over wat het project gaat en wat het doel is)
+Het project bestaat uit de onderstaande gids, die een gebruiker zou kunnen gebruiken als tutorial om de het bijbehorende project na te bootsen op zelfstandige wijze.
 
 ## 2 Installatie
 
@@ -110,13 +110,13 @@ De end- en start-balk zijn gelijkaardig, het is een cube met schaal x=4 , y=1 , 
 
 ### 4.4 Scoreboard
 
-Voor de scorebord maken we een TextMeshPro, dit kan je doen door op GameObject te klikken en naar 3D Object ga en dan Text - TextMeshPro kiest. Geeft dit object de naam ScoreBoard en plaats hem zodanig dat de scoreboard zichtbaar is vanuit het perspectief van de main camera.
+Voor de scorebord maken we een TextMeshPro, dit kan je doen door op GameObject te klikken, naar 3D Object te gaan en vervolgens Text - TextMeshPro te kiezen. Geef dit object de naam ScoreBoard en plaats hem zodanig dat de scoreboard zichtbaar is vanuit het perspectief van de main camera.
 
 ![figuur 4.7 figuur obstakel](foto/Textmeshpro.png)
 
 ### 4.5 Wall
 
-Voor we aan de scripts beginnen moet er nog één ding gebeuren, het plaatsen van de wall. Maak van een cube een rechthoek met schaal  X=4, T=0.1, Z=5 en met een Box Collider. De wall zorgt ervoor dat onze character niet hooger dan de wall kan springen, je zet de wall boven de character.
+Voor we aan de scripts beginnen moet er nog één ding gebeuren, het plaatsen van de wall. Maak van een cube een rechthoek met schaal  X=4, T=0.1, Z=5 en met een Box Collider, en gedeactiveerde mesh renderer. De wall zorgt ervoor dat onze character niet hooger dan de wall kan springen, en je zet deze wall dus boven de character.
 
 ![figuur 4.7 figuur obstakel](foto/figuurWall.png)
 
@@ -223,13 +223,13 @@ public class WaveSpawner : MonoBehaviour
 
 ### 5.4 Character
 
-Onze classe ```Character.cs``` erft over van ```Agent```. Er zijn zes belangrijke methode die we gaan gebruiken:
+Onze klasse ```Character.cs``` erft over van ```Agent```. Er zijn zes belangrijke methodes die we gaan gebruiken:
 
 - ```Initialize()``` : Eenmalige initialisatie van de agent.
 - ```OnEpisodeBegin()```: wat er moet gebeuren bij elke episode.
 - ```OnActionReceived(float[] vectorAction)```: wat er moet gebeuren bij elke action die uitgevoerd wordt.
 - ```Heuristic(float[] actionsOut)``` : wat er gedaan wordt bij elke action.
-- ```OnCollisionEnter(Collision collision)```: De action die uitgevoerd worden en de beloningen die per actie gegeven wordt.
+- ```OnCollisionEnter(Collision collision)```: De actions die uitgevoerd worden en de beloningen die per actie gegeven worden.
 - ```OnTriggerEnter(Collider other)```: Wanneer object de collider van een ander object raakt.
 
 ```cs (Character.cs)
