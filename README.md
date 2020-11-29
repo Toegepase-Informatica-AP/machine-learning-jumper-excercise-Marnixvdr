@@ -26,7 +26,7 @@ Het is de bedoeling dat de character over obstakels springt. Soms kan het zijn d
 
 In figuur 4.1 kan je het beloningssysteem zien dat de character zal krijgen. Het is de bedoeling dat onze character over de obstakels springt zonder tegen één te botsen. Wanneer de character niet beweegt wordt hij niet gestraft, als hij over een obstakel springt krijgt hij een beloning, als hij tegen een obstakel botst dan wordt hij gestraft. Hij wordt ook gestraft als hij te lang in de lucht blijft en of hij de waal die boven hem bevindt raakt.
 
-![figuur 4.1 speelveld](foto/beloningssysteem.png)
+![figuur 4.1 beloningssysteem](foto/beloningssysteem.png)
 
 ## 4 Het speelveld
 
