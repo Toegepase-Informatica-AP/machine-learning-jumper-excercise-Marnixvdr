@@ -310,7 +310,7 @@ Je kan nu zelf beginnen testen door de character met de pijltjestoets te laten s
 
 ### 7.1 configuratie van het NN
 
-Voor we de ML-Agent kunnen laten trainen moeten we nog een paar andere zaken in orde brengen. In de folder van je project maak je een map met de naam Learning, daarin maak je een bestand aan met de naam ```Character-01.yml``` (let wel op dat de naam “Character” hetzelfde moet zijn als je Behavior Name). Open het bestand en plak dit er in. Deze file zal aan de hand van parameters beslissen hoe de
+Voor we de ML-Agent kunnen laten trainen moeten we nog een paar andere zaken in orde brengen. In de folder van je project maak je een map met de naam Learning, daarin maak je een bestand aan met de naam ```Character-01.yml``` (let wel op dat de naam “Character” hetzelfde moet zijn als je Behavior Name). Open het bestand en plak dit er in. Deze file zal aan de hand van parameters beslissen hoe de training van het Neural Network juist verloopt.
 
 ```(character-01.yml)
 behaviors:
